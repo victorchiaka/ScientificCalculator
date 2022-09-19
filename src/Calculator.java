@@ -322,7 +322,7 @@ public class Calculator extends JFrame implements ActionListener{
 			inputField.setText(String.valueOf(Math.toDegrees(Math.tan(num1))));
 		}
 
-		///////////////////////////////////////SQUARE ROOT, CUBE ROOT, SQUARE AND CUBE BUTTONS//////////////////////////////////////
+		///////////////////////////////////////SQUARE ROOT, CUBE ROOT, SQUARE AND CUBE BUTTONS//////////////////////////
 		if(e.getSource() == sqrtButton){
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "sqrt";
