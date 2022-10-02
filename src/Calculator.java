@@ -90,7 +90,7 @@ public class Calculator extends JFrame implements ActionListener{
 			numberButtons[i].setForeground(Color.WHITE);
 		}
 /**********************EVERYTHING RELATED TO SCIENTIFIC PANEL AND SCIENTIFIC BUTTONS******************************/
-		sinButton =  new JButton("sin");
+		sinButton =  new JButton("sin")
 		cosButton = new JButton("cos");
 		tanButton = new JButton("tan");
 		sinhButton = new JButton("sinh");
