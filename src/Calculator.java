@@ -45,7 +45,7 @@ public class Calculator extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(550,800);
 		this.getContentPane().setBackground(new Color(0x123456));
-        this.setLayout(null);
+    this.setLayout(null);
 		this.setResizable(false);
 
 		addButton = new JButton("+");
@@ -75,10 +75,11 @@ public class Calculator extends JFrame implements ActionListener{
 			functionButtons[i].setFont(new Font("Comic sans", Font.BOLD, 20));
 			functionButtons[i].setFocusable(false);
 			functionButtons[i].setForeground(Color.WHITE);
-			if(i == 0 || i == 1)
+			if(i == 0 || i == 1) {
 				functionButtons[i].setBackground(Color.RED);
-			else
+			} else {
 				functionButtons[i].setBackground(new Color(0x999966));
+			}
 		}
 
 		for(int i = 0; i < numberButtons.length; i++){
