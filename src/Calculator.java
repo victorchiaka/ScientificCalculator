@@ -162,19 +162,26 @@ public class Calculator extends JFrame implements ActionListener{
 		scientificPanel.setBounds(10, 160, 514, 255);
 		scientificPanel.setLayout(new GridLayout(4, 6, 5, 5));
 
-		for(int i = 0; i < scientificButtons.length; i++){
+		for (int i = 0; i < scientificButtons.length; i++) {
+
 			scientificButtons[i].setFocusable(false);
-			if((i == 11) || (i == 12) || (i == 13))
+			if ((i == 11) || (i == 12) || (i == 13)) {
 				scientificButtons[i].setBackground(new Color(0xff8000));
-			else if((i == 0) || (i == 1) || (i == 2) || (i == 3) || (i == 4) || (i == 5))
+			} else if((i == 0) || (i == 1) || (i == 2) || (i == 3) || (i == 4) || (i == 5)) {
 				scientificButtons[i].setBackground(Color.BLACK);
-			else
+			} else {
 				scientificButtons[i].setBackground(new Color(0x666633));
+			}
 			scientificButtons[i].setForeground(Color.WHITE);
-			scientificButtons[i].setFont(new Font("ariel", Font.TRUETYPE_FONT, 18));
+			scientificButtons[i].setFont(new Font("ariel",
+					Font.TRUETYPE_FONT, 
+					18)
+			);
 			scientificButtons[i].addActionListener(this);
 			scientificPanel.add(scientificButtons[i]);
+
 		}
+
 		scientificPanel.setBackground(new Color(0x123456));
 
 /*********************************************STANDARD PANEL**********************************************/
@@ -222,24 +229,24 @@ public class Calculator extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		for(int i = 0; i < numberButtons.length; i++){
-			if(e.getSource() == numberButtons[i]){
-				inputField.setText(inputField.getText().concat(String.valueOf(i)));
+		for (int i = 0; i < numberButtons.length; i++) {
+			if (e.getSource() == numberButtons[i]) {
+				inputField.setText( inputField.getText().concat(String.valueOf(i)) );
 			}
 		}
 
-		if(e.getSource() == decButton){
+		if (e.getSource() == decButton) {
 			inputField.setText(inputField.getText().concat("."));
 		}
 
 		/////////////////////////////////////////MODULUS AND PERCENT BUTTON///////////////////////////////////////////
-		if(e.getSource() == modButton){
+		if (e.getSource() == modButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "mod";
 			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
 			inputField.setText("");
 		}
-		if(e.getSource() == percButton){
+		if (e.getSource() == percButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "%";
 			resultField.setText(resultField.getText().concat(num1 + String.valueOf(sciOperator)));
@@ -248,7 +255,7 @@ public class Calculator extends JFrame implements ActionListener{
 		}
 
 		////////////////////////////POWER BUTTON///////////////////////////////////////////////
-		if(e.getSource() == powButton){
+		if ( e.getSource() == powButton ) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "^";
 			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
@@ -256,7 +263,7 @@ public class Calculator extends JFrame implements ActionListener{
 		}
 
 		/////////////////////ADD, SUBTRACT, MULTIPLY AND DIVIDE BUTTONS//////////////////////////////
-		if(e.getSource() == addButton){
+		if (e.getSource() == addButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "+";
 			resultField.setText(
@@ -265,19 +272,22 @@ public class Calculator extends JFrame implements ActionListener{
 				);
 			inputField.setText("");
 		}
-		if(e.getSource() == subButton){
+
+		if (e.getSource() == subButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "-";
 			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
 			inputField.setText("");
 		}
-		if(e.getSource() == multButton){
+
+		if (e.getSource() == multButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "x";
 			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
 			inputField.setText("");
 		}
-		if(e.getSource() == divButton){
+
+		if (e.getSource() == divButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "/";
 			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
@@ -286,37 +296,42 @@ public class Calculator extends JFrame implements ActionListener{
 
 		///////////////////////////////////////TRIGONONMETRIC BUTTONS/////////////////////////////////////////
 
-		if(e.getSource() == sinButton){
+		if (e.getSource() == sinButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "sin";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.sin(num1)));
 		}
-		if(e.getSource() == cosButton){
+
+		if (e.getSource() == cosButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "cos";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.cos(num1)));
 		}
-		if(e.getSource() == tanButton){
+
+		if (e.getSource() == tanButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "tan";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.tan(num1)));
 		}
-		if(e.getSource() == sinhButton){
+
+		if (e.getSource() == sinhButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "sinh";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.toDegrees(Math.sinh(num1))));
 		}
-		if(e.getSource() == coshButton){
+
+		if (e.getSource() == coshButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "cosh";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.toDegrees(Math.cosh(num1))));
 		}
-		if(e.getSource() == tanhButton){
+
+		if (e.getSource() == tanhButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "tanh";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
@@ -324,26 +339,30 @@ public class Calculator extends JFrame implements ActionListener{
 		}
 
 		///////////////////////////////////////SQUARE ROOT, CUBE ROOT, SQUARE AND CUBE BUTTONS//////////////////////////
-		if(e.getSource() == sqrtButton){
+
+		if (e.getSource() == sqrtButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "sqrt";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.sqrt(num1)));
 		}
-		if(e.getSource() == cbrtButton){
+
+		if (e.getSource() == cbrtButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "cbrt";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.cbrt(num1)));
 		}
-		if(e.getSource() == sqrButton){
+
+		if (e.getSource() == sqrButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "sqr";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			double temp = num1 * num1;
 			inputField.setText(String.valueOf(temp));
 		}
-		if(e.getSource() == cubeButton){
+
+		if (e.getSource() == cubeButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "cube";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
@@ -352,19 +371,22 @@ public class Calculator extends JFrame implements ActionListener{
 		}
 
 		////////////////////////////////////ALL THE APPROXIMATING OPERATIONS////////////////////////////////////////////
-		if(e.getSource() == floorButton){
+		
+		if (e.getSource() == floorButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "roundDown";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.floor(num1)));
 		}
-		if(e.getSource() == cielButton){
+
+		if (e.getSource() == cielButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "roundUp";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.ceil(num1)));
 		}
-		if(e.getSource() == rndButton){
+
+		if (e.getSource() == rndButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "Approx";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
@@ -373,19 +395,21 @@ public class Calculator extends JFrame implements ActionListener{
 
 		/////////////////////////////CLEAR, DELETE AND NEGATIVE BUTTON/////////////////////////////////////////////////
 
-		if(e.getSource() == clrButton){
+		if (e.getSource() == clrButton) {
 			inputField.setText("");
 			resultField.setText("");
 		}
-		if(e.getSource() == delButton){
+
+		if (e.getSource() == delButton) {
 			String temp = inputField.getText();
 			//resultField.setText("");
 			inputField.setText("");
-			for(int i = 0; i < temp.length() - 1; i++){
+			for (int i = 0; i < temp.length() - 1; i++) {
 				inputField.setText(inputField.getText() + temp.charAt(i));
 			}
 		}
-		if(e.getSource() == negButton){
+
+		if (e.getSource() == negButton) {
 			double temp = Double.parseDouble(inputField.getText());
 			temp *= -1;
 			inputField.setText(String.valueOf(temp));
@@ -393,13 +417,14 @@ public class Calculator extends JFrame implements ActionListener{
 
 		//////////////////////////////////////LOGARITHM BUTTONS AND THEIR OPERATIONS IMPLEMENTATIONS//////////////////////////////////
 
-		if(e.getSource() == logXButton){
+		if (e.getSource() == logXButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "log";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + ")"));
 			inputField.setText(String.valueOf(Math.log(num1)));
 		}
-		if(e.getSource() == logButton){
+
+		if (e.getSource() == logButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "log10";
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + ")"));
@@ -408,7 +433,7 @@ public class Calculator extends JFrame implements ActionListener{
 
 		/////////////////////////////////////////////THE BINARY, RADIAN AND DEGREE BUTTONS///////////////////////////////////////////////////
 
-		if(e.getSource() == binaryButton){
+		if (e.getSource() == binaryButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "baseTwo";
 			resultField.setText(
@@ -417,7 +442,8 @@ public class Calculator extends JFrame implements ActionListener{
 				);
 			inputField.setText(Integer.toString((int)num1, 2));
 		}
-		if(e.getSource() == radButton){
+
+		if (e.getSource() == radButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "RAD";
 			resultField.setText(
@@ -426,7 +452,8 @@ public class Calculator extends JFrame implements ActionListener{
 				);
 			inputField.setText(String.valueOf(Math.toRadians(num1)));
 		}
-		if(e.getSource() == degButton){
+
+		if (e.getSource() == degButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "DEG";
 			resultField.setText(
@@ -438,18 +465,20 @@ public class Calculator extends JFrame implements ActionListener{
 
 		////////////////////////////////////////PI, EXPONENT AND ABSOLUTE VALUE BUTTONS///////////////////////////////////////////////
 
-		if(e.getSource() == piButton){
+		if (e.getSource() == piButton) {
 			sciOperator = "PI";
 			inputField.setText(inputField.getText().concat(String.valueOf(Math.PI)));
 		}
-		if(e.getSource() == expoButton){
+
+		if (e.getSource() == expoButton) {
 			sciOperator = "EXP";
 			inputField.setText(
 				inputField.getText()
 				.concat(String.valueOf(Math.E))
 			);
 		}
-		if(e.getSource() == absButton){
+
+		if (e.getSource() == absButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "abs";
 			resultField.setText(
@@ -460,7 +489,7 @@ public class Calculator extends JFrame implements ActionListener{
 
 		//////////////////////////////ANSWER BUTTON///////////////////////////
 
-		if(e.getSource() == ansButton){
+		if (e.getSource() == ansButton) {
 			resultField.setText(
 				resultField.getText()
 				.concat("Ans:" + String.valueOf(result))
@@ -470,13 +499,13 @@ public class Calculator extends JFrame implements ActionListener{
 		//Solve method
 
 		///////////////////////////////THE EQUALS BUTTON///////////////////////////////////
-		if(e.getSource() == equButton){
+		if (e.getSource() == equButton) {
 			solveCalculations();
 		}
 		
 	}
 
-	public void solveCalculations(){
+	public void solveCalculations() {
 		num2 = Double.parseDouble(inputField.getText());
 		inputField.setText(String.valueOf(num2));
 
@@ -506,9 +535,11 @@ public class Calculator extends JFrame implements ActionListener{
 					result = Math.abs(num1);
 					break;
 			}
+
 		num1 = result;
 		inputField.setText(String.valueOf(result));
 		resultField.setText("");
+		
 	}
 	//////////////////////////THE MAIN FUNCTION/////////////////////////////////////////////////////////
 	public static void main(String... args){
