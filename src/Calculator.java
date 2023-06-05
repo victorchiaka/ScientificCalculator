@@ -45,7 +45,7 @@ public class Calculator extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(550,800);
 		this.getContentPane().setBackground(new Color(0x123456));
-    this.setLayout(null);
+    	this.setLayout(null);
 		this.setResizable(false);
 
 		addButton = new JButton("+");
@@ -269,21 +269,25 @@ public class Calculator extends JFrame implements ActionListener{
 			resultField.setText(
 				resultField.getText()
 				.concat(num1 + String.valueOf(operator))
-				);
+			);
 			inputField.setText("");
 		}
 
 		if (e.getSource() == subButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "-";
-			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
+			resultField.setText(
+				resultField.getText().concat(num1 + String.valueOf(operator))
+			);
 			inputField.setText("");
 		}
 
 		if (e.getSource() == multButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "x";
-			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
+			resultField.setText(
+				resultField.getText().concat(num1 + String.valueOf(operator))
+			);
 			inputField.setText("");
 		}
 
