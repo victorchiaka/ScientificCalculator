@@ -27,14 +27,14 @@ public class Calculator extends JFrame implements ActionListener {
 	JButton[] functionButtons = new JButton[10];
 
 	JButton addButton, subButton, multButton, divButton,
-			negButton, clrButton, delButton, decButton,
-			equButton, ansButton;
+		negButton, clrButton, delButton, decButton,
+		equButton, ansButton;
 
 	JButton sinButton, cosButton, tanButton, sinhButton, coshButton,
-			tanhButton, modButton, logButton, logXButton, sqrtButton,
-			cbrtButton, powButton, binaryButton, radButton, degButton,
-			sqrButton, cubeButton, rndButton, cielButton, floorButton,
-			piButton, expoButton, percButton, absButton;
+		tanhButton, modButton, logButton, logXButton, sqrtButton,
+		cbrtButton, powButton, binaryButton, radButton, degButton,
+		sqrButton, cubeButton, rndButton, cielButton, floorButton,
+		piButton, expoButton, percButton, absButton;
 
 	Font inputFont = new Font("ariel", Font.BOLD, 20);
 	Font resultFont = new Font("courier new", Font.BOLD, 20);
@@ -159,7 +159,7 @@ public class Calculator extends JFrame implements ActionListener {
 		inputField.setBackground(Color.GRAY);
 		inputField.setVisible(true);
 
-		/*-------------------------------ScientificPanel ---------------------------------------*/
+		/** -------------------------------ScientificPanel --------------------------------------- **/
 		scientificPanel = new JPanel();
 		scientificPanel.setBounds(10, 160, 514, 255);
 		scientificPanel.setLayout(new GridLayout(4, 6, 5, 5));
@@ -260,8 +260,6 @@ public class Calculator extends JFrame implements ActionListener {
 			inputField.setText(String.valueOf(temp));
 		}
 
-		//////////////////////////// POWER
-		//////////////////////////// BUTTON///////////////////////////////////////////////
 		if (e.getSource() == powButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "^";
@@ -269,8 +267,6 @@ public class Calculator extends JFrame implements ActionListener {
 			inputField.setText("");
 		}
 
-		///////////////////// ADD, SUBTRACT, MULTIPLY AND DIVIDE
-		///////////////////// BUTTONS//////////////////////////////
 		if (e.getSource() == addButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "+";
@@ -302,9 +298,6 @@ public class Calculator extends JFrame implements ActionListener {
 			resultField.setText(resultField.getText().concat(num1 + String.valueOf(operator)));
 			inputField.setText("");
 		}
-
-		/////////////////////////////////////// TRIGONONMETRIC
-		/////////////////////////////////////// BUTTONS/////////////////////////////////////////
 
 		if (e.getSource() == sinButton) {
 			num1 = Double.parseDouble(inputField.getText());
@@ -347,9 +340,6 @@ public class Calculator extends JFrame implements ActionListener {
 			resultField.setText(resultField.getText().concat(sciOperator + "(" + num1 + "\"" + ")"));
 			inputField.setText(String.valueOf(Math.toDegrees(Math.tan(num1))));
 		}
-
-		/////////////////////////////////////// SQUARE ROOT, CUBE ROOT, SQUARE AND CUBE
-		/////////////////////////////////////// BUTTONS//////////////////////////
 
 		if (e.getSource() == sqrtButton) {
 			num1 = Double.parseDouble(inputField.getText());
@@ -470,13 +460,11 @@ public class Calculator extends JFrame implements ActionListener {
 			num1 = Double.parseDouble(inputField.getText());
 			sciOperator = "DEG";
 			resultField.setText(
-					resultField.getText()
-							.concat(sciOperator + "(" + num1 + ")"));
+				resultField.getText()
+				.concat(sciOperator + "(" + num1 + ")")
+			);
 			inputField.setText(String.valueOf(Math.toDegrees(num1)));
 		}
-
-		//////////////////////////////////////// PI, EXPONENT AND ABSOLUTE VALUE
-		//////////////////////////////////////// BUTTONS///////////////////////////////////////////////
 
 		if (e.getSource() == piButton) {
 			sciOperator = "PI";
@@ -486,30 +474,29 @@ public class Calculator extends JFrame implements ActionListener {
 		if (e.getSource() == expoButton) {
 			sciOperator = "EXP";
 			inputField.setText(
-					inputField.getText()
-							.concat(String.valueOf(Math.E)));
+				inputField.getText()
+				.concat(String.valueOf(Math.E))
+			);
 		}
 
 		if (e.getSource() == absButton) {
 			num1 = Double.parseDouble(inputField.getText());
 			operator = "abs";
 			resultField.setText(
-					resultField.getText()
-							.concat(operator + "(" + num1 + ")"));
+				resultField.getText()
+				.concat(operator + "(" + num1 + ")")
+			);
 		}
-
-		////////////////////////////// ANSWER BUTTON///////////////////////////
 
 		if (e.getSource() == ansButton) {
 			resultField.setText(
-					resultField.getText()
-							.concat("Ans:" + String.valueOf(result)));
+				resultField.getText()
+				.concat("Ans:" + String.valueOf(result))
+			);
 		}
 
-		// Solve method
+		/** Solve method **/
 
-		/////////////////////////////// THE EQUALS
-		/////////////////////////////// BUTTON///////////////////////////////////
 		if (e.getSource() == equButton) {
 			solveCalculations();
 		}
