@@ -175,9 +175,7 @@ public class Calculator extends JFrame implements ActionListener {
 				scientificButtons[i].setBackground(new Color(0x666633));
 			}
 			scientificButtons[i].setForeground(Color.WHITE);
-			scientificButtons[i].setFont(new Font("ariel",
-					Font.TRUETYPE_FONT,
-					18));
+			scientificButtons[i].setFont(new Font("ariel", Font.TRUETYPE_FONT, 18));
 			scientificButtons[i].addActionListener(this);
 			scientificPanel.add(scientificButtons[i]);
 
